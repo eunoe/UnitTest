@@ -1,0 +1,38 @@
+﻿@using AlumnosTest.Models
+@model List<String>
+@{
+    ViewBag.Title = "Clases";
+    List<Alumno> alumnos = ViewBag.Alumnos as List<Alumno>;
+}
+
+<h2>Clases</h2>
+
+<ul>
+    @foreach(String clase in Model)
+    {
+        <li>@Html.ActionLink(clase, "Clases", new { clase = clase})</li>
+    }
+</ul>
+
+@if(alumnos != null)
+{
+<h3>Alumnos en @ViewBag.Clase</h3>
+<table class="table">
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Clase</th>
+    </tr>
+
+    @foreach (Alumno alumno in alumnos)
+    {
+        <tr>
+            <td>@alumno.Nombre</td>
+            <td>@alumno.Apellidos</td>
+            <td>@alumno.Edad</td>
+            <td>@alumno.Clase</td>
+        </tr>
+    }
+</table>
+}

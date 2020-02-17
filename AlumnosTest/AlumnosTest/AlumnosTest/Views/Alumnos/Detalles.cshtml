@@ -1,0 +1,28 @@
+﻿@model AlumnosTest.Models.Alumno
+
+@{
+    ViewBag.Title = "Detalles";
+}
+
+<h2>Detalles del alumno</h2>
+<hr />
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>Nombre: </dt>
+        <dd>@Model.Nombre</dd>
+
+        <dt>Apellidos: </dt>
+        <dd>@Model.Apellidos</dd>
+
+        <dt>Edad: </dt>
+        <dd>@Model.Edad</dd>
+
+        <dt>Clase: </dt>
+        <dd>@Model.Clase</dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Volver", "Index")
+</p>

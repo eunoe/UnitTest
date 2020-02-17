@@ -1,0 +1,37 @@
+﻿@model IEnumerable<AlumnosTest.Models.Alumno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Alumnos</h2>
+<div class="list-group">
+    <p>
+        <b>Alumno mayor: </b>@ViewBag.AlumnoMayor<br />
+        <b>Total alumnos: </b>@ViewBag.TotalAlumnos<br />
+    </p>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>Clase</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Apellidos</td>
+                <td>@item.Edad</td>
+                <td>@item.Clase</td>
+                <td>
+                    @Html.ActionLink("Ver detalles", "Detalles", new { id = item.Id }) 
+                </td>
+            </tr>
+        }
+    </table>
+</div>
